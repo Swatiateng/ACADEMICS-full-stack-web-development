@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title> REGISTRATIONFORM</title>
+<style>
+body{
+color: azure;
+background-color: rgb(2, 26, 22);
+}
+span{
+    color: red;
+}
+</style>
+</head>
+<body >
+
+<H1>SWATI BAGALI 4NI24CS228 </H1>
+<form id="registrationform">
+<label>NAME:</label>
+&nbsp;<input id="name" TYPE="TEXT" placeholder="ENTER
+NAME"><BR>
+<span id="usernameError" class="error"></span> <BR>
+
+<label>EMAIL:</label>
+<input id="email" placeholder="EMAIL"><BR>
+<span id="emailError" class="error"></span> <BR>
+
+<label>PHONE:</label>
+<input id="phone" TYPE="number" placeholder="phone
+number"><BR>
+<span id="phoneError" class="error"></span> <BR>
+
+<label>PASSWORD:</label>
+<input id="password" TYPE="password"
+placeholder="password"><BR>
+<span id="passwordError" class="error"></span> <BR>
+
+<label>CONFIRM PASSWORD:</label>
+<input id="cpassword" TYPE="password" placeholder="re-enter the
+password">
+<span id="cpasswordError" class="error"></span> <BR>
+<BR>
+<label>YEAR:&nbsp;</label>
+I<input TYPE="RADIO" NAME="Y">
+II<input TYPE="RADIO" NAME="Y">
+III<input TYPE="RADIO" NAME="Y">
+IV<input TYPE="RADIO" NAME="Y">
+<BR>
+
+<BR>
+<label>SKILLS:&nbsp;</label>
+C++<input TYPE="checkbox" >&nbsp;
+PYTHON<input TYPE="checkbox" >&nbsp;
+DJANGO<input TYPE="checkbox" >&nbsp;
+JAVA<input TYPE="checkbox" >&nbsp;
+GIT<input TYPE="checkbox" >&nbsp;
+LINUX<input TYPE="checkbox" >&nbsp;
+WEB3<input TYPE="checkbox" >&nbsp;
+BLOCKCHAIN<input TYPE="checkbox" >&nbsp;
+<BR>
+<BR>
+<LABEl>BRANCH:</LABEl> <select >
+<optION>CSE</option>
+<optION>ISE</option>
+<optION>ECE</option>
+<optION>EEE</option>
+<optION>MECH</option>
+<optION>CIVIL</option><BR>
+</select><br>&nbsp;
+<br>
+<LABEL>PROFILE PICTURE:</LABEL>
+<INPUT TYPE="file" accept="PNG"><BR>&nbsp;
+
+<button TYPE="submit">SUBMIT</button>&nbsp;
+<button TYPE="RESET">RESET</button>
+</form>
+<script>
+document.getElementById("registrationform").addEventListener("submit",function(event){
+event.preventDefault();
+
+let username=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let phone=document.getElementById("phone").value.trim();
+let password=document.getElementById("password").value;
+let cpassword=document.getElementById("cpassword").value;
+
+let usernameError=document.getElementById("usernameError");
+let emailError=document.getElementById("emailError");
+let phoneError=document.getElementById("phoneError");
+let passwordError=document.getElementById("passwordError");
+let
+cpasswordError=document.getElementById("cpasswordError");
+//clear previous error
+
+usernameError.textContent="";
+emailError.textContent="";
+phoneError.textContent="";
+passwordError.textContent="";
+cpasswordError.textContent="";
+
+let isvalid=true;
+if(username.length<6){
+usernameError.textContent="Username must have atleast 6 characters";
+isvalid=false;
+}
+let emailpattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if(!emailpattern.test(email)){
+emailError.textContent="enter valid email";
+isvalid=false;
+}
+let phonepattern=/^\d{10}$/;
+if(!phonepattern.test(phone)){
+phoneError.textContent="enter valid phone number";
+isvalid=false;
+}
+let passwordpattern=/^(?=.*[A-Za-z])(?=.*\d).+$/;// /^(?=.*[A-Zaz])(?=.*\d).+$/;
+if(!passwordpattern.test(password)){
+passwordError.textContent="password must contain letter and numbers";
+isvalid=false;
+}
+if(password!==cpassword){
+cpasswordError.textContent="password do not match";
+isvalid=false;
+}
+})
+if(isvalid==true){
+alert("registered successfully");
+}
+</script>
+</body>
+</html>

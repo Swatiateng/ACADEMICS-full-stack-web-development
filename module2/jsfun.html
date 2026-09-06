@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../productdetails.html" >
+
+        <h4 id="name">enter your name:</h4>
+    <input type="text"><span id="nameerror"></span><br>
+
+     <h4 id="password">password:</h4>
+    <input type="text">
+<span id="passworderror"></span>
+   <br> 
+   
+   <h4 id="cpassword">re-enter password:</h4>
+        <input type="text">
+        <span id="cpassworderror"></span>
+
+        <button onclick="fun()"  type="submit" id="msg">submit</button>
+    </form>
+        <!-- <p id="msg"></p> -->
+    <script>
+        let name=document.getElementById("name").value.trim();
+        let password=document.getElementById("password").value;
+        let cpassword=document.getElementById("cpassword").value;
+
+
+        let nameerror=document.getElementById(" nameerror").value.trim();
+        let passworderror=document.getElementById("passworderror").value;
+        let cpassworderror=document.getElementById("cpassworderror").value;
+
+
+
+        nameerror.textContent="";
+        if(name.length<4){
+            nameerror.textContent="name is short";
+        }
+       
+
+
+
+        function fun(){
+           document.getElementById("msg").innerHTML="successfully loginned";
+
+        }
+    </script>
+</body>
+</html>
