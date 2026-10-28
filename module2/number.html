@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>enter a number:</label>
+    <input type="text" id="number">
+    <button onclick="checkNumber()">Check</button>
+    <p id="positive"></p>
+    <p id="even"></p>
+    <p id="square"></p>
+    <p id="cube"></p>
+
+    <script>
+        function checkNumber(){
+            let first=parseInt(document.getElementById("number").value);
+            if(first>0){
+                document.getElementById("positive").innerHTML="The number is positive";
+            }
+            else if(first<0){
+                document.getElementById("positive").innerHTML="The number is negative";
+            }
+            else{
+                document.getElementById("positive").innerHTML="The number is zero";
+            }
+            if(first%2===0){
+                document.getElementById("even").innerHTML="The number is even";
+            }
+            else{
+                document.getElementById("even").innerHTML="The number is odd";
+            }
+           document.getElementById("square").innerHTML="The square of the number is: "+(first*first);
+              document.getElementById("cube").innerHTML="The cube of the number is: "+(first*first*first);
+          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+
+    <label>enter temperature in celsius:</label>
+    <input type="text" id="celsius">
+    <button onclick="convertTemperature()">Convert</button>
+    <p id="result"> </p>
+    
+
+
+    <script>
+            window.addEventListener("load", function () {
+                alert("Welcome to the temperature converter!");
+            });
+
+            function convertTemperature() {
+                let celsius = parseFloat(document.getElementById("celsius").value);
+                let fahrenheit = (celsius * 9/5) + 32;
+                if(isNaN(celsius)){
+                    document.getElementById("result").innerHTML = "Please enter a valid number.";
+
+                }
+                else{
+                    
+                alert(celsius + "°C is equal to " + fahrenheit + "°F");
+                }
+            }
+
+
+
+        </script>
+</body>
+</html>

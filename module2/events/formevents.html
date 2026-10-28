@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Form Events</h1>
+    
+        
+        <label for="name" id="k">Name:</label>
+        <input type="text" id="name" name="name">
+        <p id="status"></p>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br><br>
+        <input type="submit" value="Submit">
+    <script>
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const status = document.getElementById("status");
+        nameInput.addEventListener("click", function() {
+             event.preventDefault(); 
+             nameInput.value = "John Doe"; 
+            nameInput.placeholder = "Name field is focused";
+            console.log(nameInput);
+            nameInput.style.color = "red";
+
+        });
+
+        emailInput.addEventListener("click", function() {
+             event.preventDefault(); 
+            status.textContent = "Email field is focused";
+            status.style.color = "blue";
+        });
+    </script>
+</body>
+</html>
