@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        #parent {
+            padding: 5px;
+            background-color: blue;
+            display: inline-block;
+        }
+
+        button {
+            background-color: black;
+            color: rgb(255, 240, 247);
+            margin: 2px;
+            width: 45px;
+            height: 40px;
+            font-size: 18px;
+        }
+
+        #n1, #n2, #n3 {
+            margin: 2px;
+        }
+
+        h1 {
+            background-color: blue;
+            color: aliceblue;
+        }
+
+        #in {
+            width: 190px;
+            height: 35px;
+            font-size: 20px;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Calculator</h1>
+
+        <div id="parent">
+
+            <!-- Display -->
+            <div style="margin: 2px;">
+                <input type="text" id="in" readonly>
+            </div>
+
+            <!-- Operators -->
+            <div id="symbol">
+
+                <button onclick="document.getElementById('in').value += '+'">+</button>
+
+                <button onclick="document.getElementById('in').value += '-'">-</button>
+
+                <button onclick="document.getElementById('in').value += '*'">*</button>
+
+                <button onclick="document.getElementById('in').value += '/'">/</button>
+
+            </div>
+
+            <!-- Numbers 1 2 3 -->
+            <div id="n1">
+
+                <button onclick="document.getElementById('in').value += '1'">
+                    1
+                </button>
+
+                <button onclick="document.getElementById('in').value += '2'">
+                    2
+                </button>
+
+                <button onclick="document.getElementById('in').value += '3'">
+                    3
+                </button>
+
+            </div>
+
+            <!-- Numbers 4 5 6 -->
+            <div id="n2">
+
+                <button onclick="document.getElementById('in').value += '4'">
+                    4
+                </button>
+
+                <button onclick="document.getElementById('in').value += '5'">
+                    5
+                </button>
+
+                <button onclick="document.getElementById('in').value += '6'">
+                    6
+                </button>
+
+            </div>
+
+            <!-- Numbers 7 8 9 -->
+            <div id="n3">
+
+                <button onclick="document.getElementById('in').value += '7'">
+                    7
+                </button>
+
+                <button onclick="document.getElementById('in').value += '8'">
+                    8
+                </button>
+
+                <button onclick="document.getElementById('in').value += '9'">
+                    9
+                </button>
+
+            </div>
+
+            <!-- Reset and Submit -->
+            <div>
+
+                <button type="reset"
+                    onclick="document.getElementById('in').value=''">
+                    reset
+                </button>
+
+                <button type="button" onclick="fun()">
+                    submit
+                </button>
+
+            </div>
+
+        </div>
+
+    </center>
+
+
+    <script>
+
+        function fun() {
+
+            let expression = document.getElementById("in").value;
+
+            try {
+                document.getElementById("in").value = eval(expression);
+            }
+            catch (error) {
+                document.getElementById("in").value = "Error";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

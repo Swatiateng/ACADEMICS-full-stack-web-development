@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 2</title>
+    <style>
+        #box {
+            background-color: rgb(199, 205, 30);
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: white;
+            background-color: rgb(30, 87, 179);
+        }
+    </style>
+</head>
+<body bgcolor="aqua">
+    <h2>swati basanagouda bagali 4NI24CS228</h2>
+    <h4>List of Fruits</h4>
+    <div id="box">
+        <ul>
+            <li>Apple</li>
+            <li>Mango</li>
+            <li>Grapes</li>
+            
+        </ul>
+    </div>
+    <button class="fruits">CHOOSE</button>
+    <button class="fruits">PAY BILL</button>
+    <button class="fruits">EAT</button>
+    <p class="special">Lorem ipsum dolor sit amet consectetur adipisicing elit. At quos cum, dolorum beatae aperiam blanditiis odio vero doloribus atque aspernatur culpa porro deserunt.</p>
+    <p class="special">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia optio consectetur omnis pariatur quas natus officiis enim rerum excepturi necessitatibus labore repellat, corrupti nobis cum aliquam sed cumque magnam nulla dolore saepe! Id architecto voluptate sed ipsa quasi laborum hic consequatur ipsum cumque, nostrum deleniti a reiciendis aspernatur! Voluptate culpa sapiente, enim dolore nisi adipisci.</p>
+    <p class="special">Lorem ipsum dolor sit amet.</p>
+
+    <script>
+        let box = document.getElementById("box");
+        box.style.backgroundColor = "blue";
+        
+        let listItems = document.getElementsByTagName("li");
+        for (let i = 0; i < listItems.length; i++) {
+            listItems[i].style.color = "red";
+        }
+        
+        let buttons = document.getElementsByTagName("button");
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function() {
+                buttons[i].textContent = "Clicked!";
+            });
+        }
+        
+        let paragraphs = document.querySelectorAll("p");
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.fontSize = "20px";
+        }
+        
+        let firstSpecial = document.querySelector(".special");
+        firstSpecial.textContent = "First special paragraph changed!";
+    </script>
+</body>
+</html>

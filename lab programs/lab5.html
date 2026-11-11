@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+
+    <label for="">Guess the number:</label>
+    <input type="number" id="random">
+
+    <button onclick="guess()">Submit</button>
+
+    <span id="ans">Hello</span>
+
+    <script>
+         let random = Math.floor(Math.random() * 100) + 1;
+            console.log(random);
+
+
+        function guess() {
+
+           
+            let user = Number(
+                document.getElementById("random").value
+            );
+
+            let output = document.getElementById("ans");
+
+            // Create submit button dynamically
+                 let submit=()=>{
+                    var node = document.createElement("button");
+                    var con = document.createTextNode("submit");
+
+                    node.appendChild(con);
+
+                    var n = document.getElementById("body");
+                    n.appendChild(node);
+                 }   
+
+           
+
+            // If the guessed number is correct
+            if (user === random) {
+
+                output.textContent = "correct";
+
+                // Confirm button
+                var node = document.createElement("button");
+                var con = document.createTextNode("confirm");
+
+                node.appendChild(con);
+
+                var n = document.getElementById("body");
+                n.appendChild(node);
+
+                node.onclick = restartGame;
+
+                // No thanks button
+                let node2 = document.createElement("button");
+                node2.textContent = "No thanks";
+
+                node2.onclick = function () {
+
+                    document.getElementById("ans").textContent =
+                        "Thanks for playing!";
+
+                    node.remove();
+                    node2.remove();
+                };
+
+                document.getElementById("body").appendChild(node2);
+            }
+
+            // If user's number is smaller
+            else if (user < random) {
+
+                output.textContent = "low";
+            }
+
+            // If user's number is greater
+            else if (user > random) {
+
+                output.textContent = "high";
+            }
+        }
+
+
+        function restartGame() {
+
+            document.getElementById("random").value = "";
+
+            // Remove all dynamically created buttons
+            document
+                .querySelectorAll("#body > button")
+                .forEach(button => {
+                    button.remove();
+                });
+
+            // Start the game again
+            guess();
+        }
+
+    </script>
+
+</body>
+</html>

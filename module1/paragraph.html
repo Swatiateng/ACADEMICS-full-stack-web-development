@@ -1,21 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student CGPA</title>
 </head>
-<body style ="background-color: rgb(144, 15, 32);">
-    <p style="color:brown">hello everyone my mane is abc.<BR>
-        i am here to understanding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullstack web develobment
-    </p>
-    <pre>This text   has   
-        
-        
-        
-        
-        large spaces.</pre>
 
-    
+<body>
+
+    <h2>Students with CGPA 9 or above</h2>
+
+    <ul id="result"></ul>
+
+    <p id="count"></p>
+    <p style="text-align: justify
+    ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, natus. Fuga ipsum reiciendis eos optio quis ducimus cum temporibus, explicabo distinctio asperiores expedita culpa, aperiam delectus ex maxime rem quidem molestiae, error impedit! Est totam quia vero fugit, beatae impedit.</p>
+    <p style="text-align: center
+    ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, natus. Fuga ipsum reiciendis eos optio quis ducimus cum temporibus, explicabo distinctio asperiores expedita culpa, aperiam delectus ex maxime rem quidem molestiae, error impedit! Est totam quia vero fugit, beatae impedit.</p>
+
+    <script>
+
+        let students = [
+            { name: "Rahul", marks: 92 },
+            { name: "Priya", marks: 85 },
+            { name: "Anu", marks: 95 },
+            { name: "Kiran", marks: 88 },
+            { name: "Sneha", marks: 91 }
+        ];
+        let studentsWithCGPA = students.map(function(student) {
+
+            return {
+                name: student.name,
+                marks: student.marks,
+                cgpa: student.marks / 10
+            };
+
+        });
+
+        let eligibleStudents = studentsWithCGPA.filter(function(student) {
+
+            return student.cgpa >= 9;
+
+        });
+
+        let result = document.getElementById("result");
+
+        eligibleStudents.forEach(function(student) {
+
+            let li = document.createElement("li");
+
+            li.textContent =
+                student.name + " - CGPA: " + student.cgpa;
+
+            result.appendChild(li);
+
+        });
+      
+        let count = eligibleStudents.reduce(function(total, student) {
+
+            return total + 1;
+
+        }, 0);
+
+        document.getElementById("count").textContent =
+            "Total students with CGPA 9 or above: " + count;
+ </script>
+
 </body>
 </html>

@@ -1,0 +1,18 @@
+div{
+    background-color: #624aa5;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    transition: 1s;
+    transition-delay: 0.5s;
+    
+transition-duration: 0.5s;
+transition-timing-function:steps(4, end);
+    /*transition shorthand: transition:property-name duration timing-function delay;  ex:margin-top 2s ease-in-out 0.2s;*/
+    /* timing-function it tells about flow of the transition */
+
+}
+div:hover {
+    background-color: #81bb2aa3;
+    border-radius: 50px;
+}
